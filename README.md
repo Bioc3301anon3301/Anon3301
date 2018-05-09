@@ -22,7 +22,7 @@ time count_seqs.py -i slout/seqs.fna
 source deactivate
 
 
-# Next we choose the OTUs using SILVA closed reference
+# Next we choose the OTUs using SILVA closed reference. Below is how a batch script is performed without comments. I will have comments for all my steps
 
 #!/bin/bash          
 #SBATCH -t 1:00:00                                                          
