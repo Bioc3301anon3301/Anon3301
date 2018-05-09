@@ -372,7 +372,7 @@ source activate qiime1
 echo summarize taxonomy plots
 #summarise taxonomy plots based on taxonomic data generated
 summarize_taxa.py -i pickedOTUs/otu_table.biom -m 2018_02_smb/map.tsv -o taxasummary2018
-#deactivate
+# deactivate
 source deactivate
 
 # summarize taxa information of 2016 samples
@@ -392,5 +392,5 @@ source activate qiime1
 echo summarize taxonomy plots
 #summarise taxonomy plots based on taxonomic data generated
 summarize_taxa.py -i pickedOTUs2017/otu_table.biom -m 2017_03_smb/map_YearAgo.tsv -o taxasummary2017
-#deactivate
+# deactivate
 source deactivate
