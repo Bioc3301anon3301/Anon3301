@@ -1,6 +1,4 @@
-# Anon3301
-# First step required is to split the library and count sequences
-# The batch script below splits the Read 1 which is the forward read from Illumina,the Index file is the barcode file which contains unique barcodes per sample
+# Anon3301 First step required is to split the library and count sequences The batch script below splits the Read 1 which is the forward read from Illumina,the Index file is the barcode file which contains unique barcodes per sample
 # -i denotes input -m is map -o is output -b is barcode reference
 #!/bin/bash
 #SBATCH -t 1:00:00
@@ -25,6 +23,7 @@ source deactivate
 
 
 # Next we choose the OTUs using SILVA closed reference
+
 #!/bin/bash          
 #SBATCH -t 1:00:00                                                          
 #SBATCH -n 16                                                               
@@ -35,26 +34,20 @@ module load eb
 
 module load Miniconda2
 
-source deactivate
-
-# loading virtualenv                                                                   
+source deactivate                                                                  
 
 echo "loading virtualenv"
 
-source activate qiime1
+source activate qiime1                                                         
 
-# setting temporary directory                                                          
-
-export TMPDIR=~/qiime_tmp
-
-# picking OTUs                                                                         
+export TMPDIR=~/qiime_tmp                                                                        
 
 echo "Picking OTUs with closed reference"
 
 pick_closed_reference_otus.py
 -i seqs.fna -o otus -r SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta -t SILVA_128_QIIME_release/taxonomy/16S_only/97/majority_taxonomy_all_levels.txt -a -O 16 -o pickedOTUs
 
-# deactivating environment
+
 source deactivate
 
 
